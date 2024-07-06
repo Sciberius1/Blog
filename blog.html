@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Blog</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+    <header>
+    <h1 class="header">What others have had to say...</h1>
+    </header>
+
+    <div class='blog-wrapper'>
+        <div class='row'>
+            <div class='column'>
+                <div class='blue-column'>
+                    <div class='post-box'>
+                        <div class='post'>
+                            <script>
+                                fetch('./assets/blog.json')
+                                    .then(response => response.json())
+                                    .then(data => {
+                                        const posts = data.posts;
+                                        const postContainer = document.querySelector('.post');
+
+                                        posts.forEach(post => {
+                                            const messageTitle = post.messageTitle;
+                                            const userName = post.userName;
+                                            const messageContent = post.messageContent;
+
+                                            const postElement = document.createElement('div');
+                                            postElement.classList.add('post-item');
+
+                                            const titleElement = document.createElement('h2');
+                                            titleElement.textContent = messageTitle;
+                                            postElement.appendChild(titleElement);
+
+                                            const userElement = document.createElement('p');
+                                            userElement.textContent = `By: ${userName}`;
+                                            postElement.appendChild(userElement);
+
+                                            const contentElement = document.createElement('p');
+                                            contentElement.textContent = messageContent;
+                                            postElement.appendChild(contentElement);
+
+                                            postContainer.appendChild(postElement);
+                                        });
+                                    })
+                                    .catch(error => {
+                                        console.error('Error:', error);
+                                    });
+                            </script>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+            <div class='column'>
+                <div class='green-column'>
+                    <script src='./assets/js/createNew.js'></script>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

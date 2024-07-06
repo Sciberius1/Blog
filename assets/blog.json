@@ -1,0 +1,14 @@
+{
+    "posts": [
+        {
+            "userName": "JohnDoe",
+            "messageTitle": "First Post",
+            "messageContent": "This is my first blog post."
+        },
+        {
+            "userName": "JaneSmith",
+            "messageTitle": "Second Post",
+            "messageContent": "Check out my latest blog entry!"
+        }
+    ]
+}

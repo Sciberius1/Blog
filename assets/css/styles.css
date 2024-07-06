@@ -1,0 +1,104 @@
+/* Header */
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+/* Body */
+.body {
+    display: flex;
+    flex-direction: row;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.flex-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+}
+
+img {
+    width: 90%;
+    height: auto;
+}
+/* a wrapper for the blog areas*/
+.blog-wrapper {
+    margin: 15px;
+    background-color: red;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+
+.blue-column {
+    background-color: blue;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.green-column {
+    background-color: green;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Post related styles */
+.post-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.post {
+    width: 47%;
+    min-width: 300px;
+    margin: 10px;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+}
+.post .messageTitle {
+    font-weight: bold;
+    text-decoration: underline;
+}
+.post .userName::before {
+    content: "By: ";
+}
+.message {
+    width: 45%;
+    min-width: 300px;
+    max-width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+}
+.message textarea {
+    width: 100%;
+    height: 100%;
+    resize: none;
+    border: none;
+    outline: none;
+}
