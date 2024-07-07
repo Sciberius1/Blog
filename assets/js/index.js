@@ -9,14 +9,14 @@ const fetchBlogData = async () => {
             const messageContent = entry.messageContent;
 
             const postBox = document.createElement('div');
-            postBox.classList.add('post-box'); // Add the CSS class for styling
+            postBox.classList.add('post-box'); 
 
             const titleElement = document.createElement('h2');
             titleElement.textContent = messageTitle;
             postBox.appendChild(titleElement);
 
             const userElement = document.createElement('p');
-            userElement.textContent = `By ${userName}`;
+            userElement.textContent = `By: ${userName}`;
             postBox.appendChild(userElement);
 
             const contentElement = document.createElement('p');
