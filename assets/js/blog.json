@@ -1,0 +1,17 @@
+[
+    {
+        "blogTitle": "The Future of AI",
+        "blogAuthor": "Jane Doe",
+        "blogContent": "Artificial Intelligence (AI) is rapidly evolving and transforming various industries. From healthcare to finance, AI is making significant strides in improving efficiency and accuracy. In this blog post, we will explore the future of AI and its potential impact on society."
+    },
+    {
+        "blogTitle": "Understanding Blockchain Technology",
+        "blogAuthor": "John Smith",
+        "blogContent": "Blockchain technology is the backbone of cryptocurrencies like Bitcoin. However, its applications go beyond digital currencies. In this post, we will delve into the basics of blockchain technology, its benefits, and its potential use cases in different sectors."
+    },
+    {
+        "blogTitle": "The Importance of Cybersecurity",
+        "blogAuthor": "Alice Johnson",
+        "blogContent": "In today's digital age, cybersecurity is more important than ever. With the increasing number of cyber threats, it is crucial to protect sensitive information and maintain privacy. This blog post will discuss the importance of cybersecurity and provide tips on how to stay safe online."
+    }
+]
