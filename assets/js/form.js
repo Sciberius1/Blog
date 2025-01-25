@@ -1,7 +1,7 @@
-// TODO: Create a variable that selects the form element
+// Create a variable that selects the form element
 const form = document.querySelector('form');
 
-// TODO: Create a function that handles the form submission. Grab the form data and store it in local storage, then redirect to the blog page using the `redirectPage` function. If the form is submitted with missing data, display an error message to the user.
+// Create a function that handles the form submission. Grab the form data and store it in local storage, then redirect to the blog page using the `redirectPage` function. If the form is submitted with missing data, display an error message to the user.
 function handleFormSubmission(event) {
     event.preventDefault();
     
@@ -23,31 +23,33 @@ function handleFormSubmission(event) {
             const errorElement = input.nextElementSibling;
 
             if (!value) {
-            input.style.borderColor = 'red';
-            if (errorElement) {
-                errorElement.textContent = `Please fill in the missing ${key}.`;
+                input.style.borderColor = 'red';
+                if (errorElement) {
+                    errorElement.textContent = `Please fill in the missing ${key}.`;
+                } else {
+                    const error = document.createElement('div');
+                    error.style.color = 'red';
+                    error.textContent = `Please fill in the missing ${key}.`;
+                    input.insertAdjacentElement('afterend', error);
+                }
             } else {
-                const error = document.createElement('div');
-                error.style.color = 'red';
-                error.textContent = `Please fill in the missing ${key}.`;
-                input.insertAdjacentElement('afterend', error);
-            }
-            } else {
-            input.style.borderColor = '';
-            if (errorElement) {
-                errorElement.textContent = '';
-            }
+                input.style.borderColor = '';
+                if (errorElement) {
+                    errorElement.textContent = '';
+                }
             }
         });
         return;
     }
 
-    localStorage.setItem('formData', JSON.stringify(data));
-    redirectPage();
+    // Retrieve existing blog data from local storage
+    const existingData = JSON.parse(localStorage.getItem('blogData')) || [];
+    // Add new form data to existing blog data
+    existingData.push(data);
+    // Store updated blog data back to local storage
+    localStorage.setItem('blogData', JSON.stringify(existingData));
+    redirectPage('./blog.html');
 }
 
+// Add an event listener to the form on submit. Call the function to handle the form submission.
 form.addEventListener('submit', handleFormSubmission);
-
-
-
-// TODO: Add an event listener to the form on submit. Call the function to handle the form submission.

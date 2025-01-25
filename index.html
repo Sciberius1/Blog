@@ -19,47 +19,38 @@
   </header>
   <main>
   <!-- Create landing page elements to match the mock-up provided. At the very least, include the following elements. -->
-  <div style="display: flex;">
-    <div style="flex: 1;">
-      <img src="./assets/100-web-apis-challenge-demo.gif" alt="Demo Image" style="width: 100%;">
+    <div class="container">
+      <img src="./assets/settingdstage.jpg" alt="Demo Image" class="container-img">
     </div>
-    <div style="flex: 1;">
-      <form id="blogForm">
-        <label for="username">User name:</label>
-        <input type="text" id="username" name="username" placeholder="Enter User Name" required>
-        
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title" placeholder="Enter Blog Title" required>
-        
-        <label for="content">Content:</label>
-        <textarea id="content" name="content" placeholder="Enter Blog Content Here" required></textarea>
-        
+    <div class="spacer"></div>
+    <div class="container">
+      <form id="blogForm" class="form">
+
+        <!-- An input element whose label and id are `username` -->
+          <div class="form-row">
+            <label for="blogAuthor">User name:</label>
+            <input type="text" id="blogAuthor" name="blogAuthor" placeholder="Enter User Name" required>
+          </div>
+
+        <!-- An input element whose label and id are `title` -->
+          <div class="form-row">
+            <label for="blogTitle">Title:</label>
+            <input type="text" id="blogTitle" name="blogTitle" placeholder="Enter Blog Title" required>
+          </div>
+
+        <!-- A textarea element whose label and id are `content` -->
+          <div class="form-row">
+            <label for="blogContent">Content:</label>
+            <textarea id="blogContent" name="blogContent" placeholder="Enter Blog Content Here" required></textarea>
+          </div>
+
+        <!-- A p element whose id is `error` -->
         <p id="error"></p>
-        
+
         <button type="submit">Submit</button>
       </form>
-    </div>
-  </div>
-
-
-  <!-- A form element that contains the following: -->
-
-    <!-- An input element whose label and id are `username` -->
-
-    <!-- An input element whose label and id are `title` -->
-
-    <!-- A textarea element whose label and id are `content` -->
-
-    <!-- A p element whose id is `error` -->
+      </div>
   </main>
-  <footer>
-    <div>
-      <h3>Made with:  <span style="color: red;">&#10084;</span> by Andrew</h3>
-      <p><strong>Portfolio:</strong> Andrew J. Yon 4th</p>
-      <p><strong>Blog:</strong> Full-Stack Blog</p>
-      <p><strong>GitHub:</strong> </p>
-    </div>
-
-  </footer>
+  <!-- <footer></footer> -->
 </body>
 </html>
