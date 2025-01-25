@@ -1,17 +1,17 @@
 [
     {
         "blogTitle": "The Future of AI",
-        "blogAuthor": "Jane Doe",
-        "blogContent": "Artificial Intelligence (AI) is rapidly evolving and transforming various industries. From healthcare to finance, AI is making significant strides in improving efficiency and accuracy. In this blog post, we will explore the future of AI and its potential impact on society."
+        "blogAuthor": "Andrew Yon",
+        "blogContent": "Artificial Intelligence (AI) is rapidly evolving and transforming various industries. I am currently part of a project developing an app to be used in the Wind Industry to revolutionize training and aid in integrating AI into the safety aspect of the industry. The final goal of the app will be to use AI to evalute the live video feed from an augmented reality headset to determine if the user is following safety protocols, asses the environment, and provide real-time feedback to the user. The app will then overlay danger notifications to the user by using colored highlights to aid the user in recognizing the types of dangers they are facing in the environment they are currently in."
     },
     {
-        "blogTitle": "Understanding Blockchain Technology",
-        "blogAuthor": "John Smith",
-        "blogContent": "Blockchain technology is the backbone of cryptocurrencies like Bitcoin. However, its applications go beyond digital currencies. In this post, we will delve into the basics of blockchain technology, its benefits, and its potential use cases in different sectors."
+        "blogTitle": "Understanding Augmented Reality Technology",
+        "blogAuthor": "Andrew Yon",
+        "blogContent": "Augmented Reality (AR) is a technology that superimposes computer-generated images on a user's view of the real world. AR technology is becoming increasingly popular in various industries, including gaming, education, and healthcare. The app I am working on will try to integrate AR Technology into a safety app that will enable the user to navigate through dangerous construction sites, repair damaged equipment that uses stored energy sources without risking their lives, and provide real-time feedback on the environment they are in. The app will also provide a virtual training environment for users to practice safety protocols in a controlled environment."
     },
     {
         "blogTitle": "The Importance of Cybersecurity",
-        "blogAuthor": "Alice Johnson",
-        "blogContent": "In today's digital age, cybersecurity is more important than ever. With the increasing number of cyber threats, it is crucial to protect sensitive information and maintain privacy. This blog post will discuss the importance of cybersecurity and provide tips on how to stay safe online."
+        "blogAuthor": "Andrew Yon",
+        "blogContent": "In today's digital age, cybersecurity is more important than ever. As part of the energy industry, I have to take into account that nation states will be targetting the energy sector to disrupt the power grid of adversaries. The app I am working on will have to take into account the importance of cybersecurity to protect the user's data and ensure that the app is not vulnerable to cyber attacks from malicious actors. Yet, it will also have to be useable by technicians from around the world as it will be developed for the Global Wind Organization to help establish and maintain safety protocols for the wind industry around the world."
     }
 ]

@@ -50,6 +50,7 @@ main {
   padding-left: 10px;
   padding-right: 10px;
   max-height: 85vh;
+  overflow-y: auto;
 }
 
 .blogContainer {
@@ -58,6 +59,7 @@ main {
   gap: 10px;
   align-items: flex-start;
   justify-content: flex-start;
+  overflow-y: auto;
 }
 
 .post-card {
@@ -136,7 +138,7 @@ footer {
   border-top: 5px double #000000;
   max-height: 15vh;
   width: 100%;
-  position: fixed;
+  /* position: fixed; */
   bottom: 0;
   left: 0;
   right: 0;
