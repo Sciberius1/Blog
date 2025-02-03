@@ -1,55 +1,60 @@
-// Create a variable that selects the form element
-const form = document.querySelector('form');
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("blogForm");
+  const errorElement = document.getElementById("error");
 
-// Create a function that handles the form submission. Grab the form data and store it in local storage, then redirect to the blog page using the `redirectPage` function. If the form is submitted with missing data, display an error message to the user.
-function handleFormSubmission(event) {
+  form.addEventListener("submit", function (event) {
     event.preventDefault();
-    
-    const formData = new FormData(form);
-    const data = {};
-    let hasEmptyFields = false;
+    const username = form.username.value.trim();
+    const title = form.title.value.trim();
+    const content = form.content.value.trim();
+    let hasError = false;
 
-    formData.forEach((value, key) => {
-        if (!value) {
-            hasEmptyFields = true;
-        }
-        data[key] = value;
-    });
+    // Reset error styles
+    form.username.style.borderColor = "";
+    form.title.style.borderColor = "";
+    form.content.style.borderColor = "";
 
-    if (hasEmptyFields) {
-        alert('Please fill in all the fields.');
-        formData.forEach((value, key) => {
-            const input = form.querySelector(`[name="${key}"]`);
-            const errorElement = input.nextElementSibling;
-
-            if (!value) {
-                input.style.borderColor = 'red';
-                if (errorElement) {
-                    errorElement.textContent = `Please fill in the missing ${key}.`;
-                } else {
-                    const error = document.createElement('div');
-                    error.style.color = 'red';
-                    error.textContent = `Please fill in the missing ${key}.`;
-                    input.insertAdjacentElement('afterend', error);
-                }
-            } else {
-                input.style.borderColor = '';
-                if (errorElement) {
-                    errorElement.textContent = '';
-                }
-            }
-        });
-        return;
+    if (!username) {
+      form.username.style.borderColor = "red";
+      hasError = true;
+    }
+    if (!title) {
+      form.title.style.borderColor = "red";
+      hasError = true;
+    }
+    if (!content) {
+      form.content.style.borderColor = "red";
+      hasError = true;
     }
 
-    // Retrieve existing blog data from local storage
-    const existingData = JSON.parse(localStorage.getItem('blogData')) || [];
-    // Add new form data to existing blog data
-    existingData.push(data);
-    // Store updated blog data back to local storage
-    localStorage.setItem('blogData', JSON.stringify(existingData));
-    redirectPage('./blog.html');
-}
+    if (hasError) {
+      errorElement.style.display = "block";
+      return;
+    }
 
-// Add an event listener to the form on submit. Call the function to handle the form submission.
-form.addEventListener('submit', handleFormSubmission);
+    errorElement.style.display = "none";
+
+    const newPost = { username, title, content };
+
+    // Store the new post in local storage
+    storeLocalStorage("blogData", newPost);
+
+    // Redirect to the blog page
+    window.location.href = "blog.html";
+  });
+
+  /**
+   * Function to store data in local storage.
+   * @param {string} key - The key under which the data is stored.
+   * @param {Object} value - The data to be stored.
+   */
+  function storeLocalStorage(key, value) {
+    let existingData = localStorage.getItem(key);
+    existingData = existingData ? JSON.parse(existingData) : [];
+    if (!Array.isArray(existingData)) {
+      existingData = [];
+    }
+    existingData.push(value);
+    localStorage.setItem(key, JSON.stringify(existingData));
+  }
+});

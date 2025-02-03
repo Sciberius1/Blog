@@ -1,214 +1,193 @@
-/* Light Mode */
 body {
-  background-color: #ffffff;
-  color: #000000;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;  
-  width: 100%;
-  height: 10vh;
-  padding: 10px;
+    position: relative;
+    padding: 20px;
+    border-bottom: 4px double black;
+    border-top: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 60px; /* Adjust height as needed */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 header h1 {
-  display: flex;
-  flex-direction: row;
-  flex: 1;
-  min-height: 1.5em;
-  max-width: 75%;
+    margin: 0;
+    padding-left: 10px;
+    flex-grow: 1;
 }
 
-header .backButton {
-  background-color: #e0e0e0;
-  color: #000000;
-  border: 1px solid #000000;
-  padding: 10px;
-  justify-self: center;
-  align-self: center;
+.dark-mode-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    transition: background 0.3s;
+    position: absolute;
+    right: 5vw; /* Fixed to 5vw from the right edge of the header */
+    background-color: #007BFF; /* Match the color of the back button */
+    color: white;
+    border-radius: 4px; /* Round off the corners */
+}
+
+.dark-mode-btn::before {
+    content: '☀️'; /* Sun icon */
+}
+
+.dark-mode-btn.dark {
+    background-color: #0056b3; /* Match the hover color of the back button */
+}
+
+.dark-mode-btn.dark::before {
+    content: '🌙'; /* Moon icon */
+}
+
+#backButton {
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background 0.3s;
+    position: absolute;
+    right: calc(5vw + 50px); /* 10px to the left of the dark mode button */
+}
+
+#backButton:hover {
+    background-color: #0056b3;
 }
 
 main {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-  height: 85vh;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-top: 10px double #000000;
-}
-
-.container {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  max-height: 85vh;
-  overflow-y: auto;
-}
-
-.blogContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    height: calc(100vh - 15vh - 84px); /* Adjust height based on header and footer height */
+    overflow-y: auto;
 }
 
 .post-card {
-  display: flex;
-  flex-direction: column;
-  margin: 10px;
-  max-width: 50vw;
-  border: 1px solid #000000;
-  padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.post-card h2 {
-  margin: 0;
-  padding: 5px;
-  font-weight: bold;
+.post-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
 }
 
-.post-card p {
-  margin: 0;
-  font-size: 1em;
-  padding: 5px;
-  font-weight: normal;
+.post-author {
+    font-size: 1.2em;
+    margin-bottom: 10px;
 }
 
-
-
-.spacer {
-  border-left: 5px solid #000000;
-  border-right: 5px solid #000000;
-  min-width: 5px;
-  height: 100%;
+.post-content {
+    font-size: 1em;
 }
-
-.container img {
-  max-width: 100%;
-  height: auto;
-  display: flex;
-  flex: 1 1 auto;
-  margin: auto;
-}
-
-.form {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  /* padding: 10px; */
-}
-
-.form-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.form-row label {
-  min-width: 125px; /* Adjust this value based on the longest label */
-  text-align: left;
-  padding-left: 10px;
-}
-
-.form-row input {
-  flex: 1;
-  margin-right: 10px;
-}
-
 
 footer {
-  background-color: #f1f1f1;
-  color: #000000;
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  justify-content: center;
-  border-top: 5px double #000000;
-  max-height: 15vh;
-  width: 100%;
-  /* position: fixed; */
-  bottom: 0;
-  left: 0;
-  right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+    text-align: center;
+    border-top: 2px solid black;
+    height: 15vh;
+    box-sizing: border-box;
 }
 
-footer h3 {
-  font-size: 1.2em;
-  margin: 10px;
-  font-weight: bold;
-  text-align: center;
+footer h2 {
+    margin: 0;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
-footer p {
-  margin: 10px;
-  font-size: 0.8em;
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 600px;
+    text-align: left;
+    padding-left: 20px; /* Add padding to align with the left edge */
 }
-/* Dark Mode */
+
+.footer-content p {
+    margin: 5px 0;
+}
+
 body.dark-mode {
-  background-color: #000000;
-  color: aquamarine;
+    background-color: #121212;
+    color: aquamarine;
 }
 
 body.dark-mode header {
-  color: aquamarine;
+    border-bottom: 4px double aquamarine;
+    border-top: 2px solid aquamarine;
 }
 
 body.dark-mode header h1 {
-  color: aquamarine;
+    color: aquamarine;
 }
 
-body.dark-mode header .backButton {
-  background-color: #000000;
-  color: aquamarine;
-  border: 1px solid aquamarine;
+body.dark-mode .left-column {
+    border-right: 2px solid aquamarine;
 }
 
-body.dark-mode header .toggleButton {
-  background-color: #000000;
-  border: 1px solid aquamarine;
+body.dark-mode .right-column {
+    border-left: 2px solid aquamarine;
 }
 
-body.dark-mode main {
-  border-top: 10px double aquamarine;
+body.dark-mode input, body.dark-mode textarea {
+    border: 1px solid aquamarine;
+    color: aquamarine;
 }
 
-body.dark-mode .spacer {
-  border-left: 5px solid aquamarine;
-  border-right: 5px solid aquamarine;
+body.dark-mode label {
+    color: aquamarine;
 }
 
-body.dark-mode .form-row label {
-  color: aquamarine;
+body.dark-mode #error {
+    color: aquamarine;
 }
 
-body.dark-mode .form-row input {
-  background-color: #333333;
-  color: aquamarine;
-  border: 1px solid aquamarine;
+body.dark-mode .post-card {
+    background-color: #333;
+    border: 1px solid aquamarine;
+}
+
+body.dark-mode .post-title,
+body.dark-mode .post-author,
+body.dark-mode .post-content {
+    color: aquamarine;
 }
 
 body.dark-mode footer {
-  background-color: #000;
-  color: aquamarine;
-  border-top: 5px double aquamarine;
+    background-color: #333;
+    border-top: 2px solid aquamarine;
 }
 
-body.dark-mode footer h1 {
-  color: aquamarine;
-}
-
-body.dark-mode footer p {
-  color: aquamarine;
+body.dark-mode footer h2,
+body.dark-mode .footer-content p {
+    color: aquamarine;
 }
